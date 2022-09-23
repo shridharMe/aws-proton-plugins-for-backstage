@@ -69,7 +69,7 @@ spec:
           aws_proton_dev_environment_name: "backstage-proton-eks-dev
           aws_proton_prod_environment_name: "backstage-proton-eks-dev"
           # The AWS account where the Proton service will be created
-          aws_account_id: ""
+          aws_account_id: "753690273280"
           # The AWS region where the Proton service will be created
           aws_region: us-east-2
 
