@@ -89,14 +89,14 @@ spec:
       action: aws:proton:create-service
       input:
         serviceName: ${{ parameters.component_id }}
-        repository: ${{ parameters.repoUrl | parseRepoUrl }}
-        branchName: main
+        #repository: ${{ parameters.repoUrl | parseRepoUrl }}
+        #branchName: main
         serviceSpecPath: ./spec.yaml
         # Update the following fields to match the resources in your AWS account
         region: us-east-2
         templateName: micro-service1
         templateMajorVersion: '1'
-        repositoryConnectionArn: 'arn:aws:codestar-connections:us-east-2:753690273280:connection/45e8a4a7-205b-46dc-9953-62b43d0a2112'
+        #repositoryConnectionArn: 'arn:aws:codestar-connections:us-east-2:753690273280:connection/45e8a4a7-205b-46dc-9953-62b43d0a2112'
 
     - id: register
       name: Register
