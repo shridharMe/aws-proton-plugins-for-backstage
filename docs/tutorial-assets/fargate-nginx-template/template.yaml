@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: fargate-nginx-template
   title: AWS Proton Services
-  description: Create a simple website using Nginx and AWS Fargate
+  description: Self Service to create cloud services
   tags:
     - recommended
     - nginx
