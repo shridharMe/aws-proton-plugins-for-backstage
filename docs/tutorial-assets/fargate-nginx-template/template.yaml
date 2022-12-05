@@ -5,8 +5,8 @@ metadata:
   title: AWS Proton Services
   description: Self Service to create cloud services
   tags:
-    - recommended
-    - nginx
+    - eks
+    - ecs
     - fargate
 spec:
   owner: service@example.com
