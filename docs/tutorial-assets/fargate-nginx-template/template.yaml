@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: fargate-nginx-template
-  title: Nginx Fargate Web Service
+  title: AWS Proton Services
   description: Create a simple website using Nginx and AWS Fargate
   tags:
     - recommended
