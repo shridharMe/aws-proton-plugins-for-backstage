@@ -1,13 +1,13 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: eks-service-template
-  title: EKS Microservice
-  description: Create a simple microservice
+  name: fargate-nginx-template
+  title: Nginx Fargate Web Service
+  description: Create a simple website using Nginx and AWS Fargate
   tags:
     - recommended
-    - eks
-    - microservice
+    - nginx
+    - fargate
 spec:
   owner: service@example.com
   type: service
@@ -66,12 +66,12 @@ spec:
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           http_port: 8080
           # The AWS Proton environments to use for deploying the initial service instances
-          aws_proton_dev_environment_name: "backstage-proton-eks-dev"
-          aws_proton_prod_environment_name: "backstage-proton-eks-dev"
+          aws_proton_dev_environment_name: "vpc-dev"
+          aws_proton_prod_environment_name: "vpc-dev"
           # The AWS account where the Proton service will be created
-          aws_account_id: "xxxxxx"
+          aws_account_id: "753690273280"
           # The AWS region where the Proton service will be created
-          aws_region: us-east-2
+          aws_region: eu-west-2
 
     - id: publish
       name: Publish
@@ -89,14 +89,14 @@ spec:
       action: aws:proton:create-service
       input:
         serviceName: ${{ parameters.component_id }}
-        #repository: ${{ parameters.repoUrl | parseRepoUrl }}
-        #branchName: main
+        repository: ${{ parameters.repoUrl | parseRepoUrl }}
+        branchName: main
         serviceSpecPath: ./spec.yaml
         # Update the following fields to match the resources in your AWS account
-        region: us-east-2
-        templateName: micro-service1
-        templateMajorVersion: '1'
-        #repositoryConnectionArn: 'arn:aws:codestar-connections:us-east-2:xxxxxxxx:connection/xxxx'
+        region: eu-west-2
+        templateName: ec2
+        templateMajorVersion: '1.0'
+        repositoryConnectionArn: 'arn:aws:codestar-connections:eu-west-2:753690273280:connection/920ee86f-586c-49e3-91ac-54df9534ae97'
 
     - id: register
       name: Register
